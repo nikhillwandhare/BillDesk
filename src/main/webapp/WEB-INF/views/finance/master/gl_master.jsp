@@ -25,70 +25,114 @@
 <div class="row">
 	<div class="col-lg-12">
 	    <div class="card">
-	        <div class="card-body">
-	            <h4 class="card-title">Sample Horizontal Form with Icons</h4>
-	            <h6 class="card-subtitle">Use Bootstrap's predefined grid classes for horizontal form</h6>
-	            <form class="form-horizontal p-t-20">
-	                <div class="form-group row">
-	                    <label for="exampleInputuname3" class="col-sm-3 control-label">Username*</label>
-	                    <div class="col-sm-9">
-	                        <div class="input-group">
-	                            <div class="input-group-prepend"><span class="input-group-text"><i class="ti-user"></i></span></div>
-	                            <input type="text" class="form-control" id="exampleInputuname3" placeholder="Username">
-	                        </div>
-	                    </div>
-	                </div>
-	                <div class="form-group row">
-	                    <label for="exampleInputEmail3" class="col-sm-3 control-label">Email*</label>
-	                    <div class="col-sm-9">
-	                        <div class="input-group">
-	                            <div class="input-group-prepend"><span class="input-group-text"><i class="ti-email"></i></span></div>
-	                            <input type="email" class="form-control" id="exampleInputEmail3" placeholder="Enter email">
-	                        </div>
-	                    </div>
-	                </div>
-	                <div class="form-group row">
-	                    <label for="web" class="col-sm-3 control-label">Website</label>
-	                    <div class="col-sm-9">
-	                        <div class="input-group">
-	                            <div class="input-group-prepend"><span class="input-group-text"><i class="ti-world"></i></span></div>
-	                            <input type="text" class="form-control" id="web" placeholder="Enter Website Name">
-	                        </div>
-	                    </div>
-	                </div>
-	                <div class="form-group row">
-	                    <label for="inputPassword4" class="col-sm-3 control-label">Password*</label>
-	                    <div class="col-sm-9">
-	                        <div class="input-group">
-	                            <div class="input-group-prepend"><span class="input-group-text"><i class="ti-lock"></i></span></div>
-	                            <input type="password" class="form-control" id="exampleInputpwd4" placeholder="Enter pwd">
-	                        </div>
-	                    </div>
-	                </div>
-	                <div class="form-group row">
-	                    <label for="inputPassword5" class="col-sm-3 control-label">Re Password*</label>
-	                    <div class="col-sm-9">
-	                        <div class="input-group">
-	                            <div class="input-group-prepend"><span class="input-group-text"><i class="ti-lock"></i></span></div>
-	                            <input type="password" class="form-control" id="exampleInputpwd5" placeholder="Re Enter pwd">
-	                        </div>
-	                    </div>
-	                </div>
-	                <div class="form-group row">
-	                    <div class="offset-sm-3 col-sm-9">
-	                        <label class="custom-control custom-checkbox m-b-0">
-	                            <input type="checkbox" class="custom-control-input">
-	                            <span class="custom-control-label">Check me out !</span>
-	                        </label>
-	                    </div>
-	                </div>
-	                <div class="form-group row m-b-0">
-	                    <div class="offset-sm-3 col-sm-9">
-	                        <button type="submit" class="btn btn-success waves-effect waves-light">Sign in</button>
-	                    </div>
-	                </div>
-	            </form>
-	        </div>
+			<div class="card-body">
+                <form action="#">
+                    <div class="form-body">
+                        <h3 class="card-title">GL Master</h3>
+                        <hr>
+                        <div class="row p-t-20">
+                            <div class="col-md-6">
+                                <div class="form-group">
+                                    <label class="control-label">Type</label>
+                                    <select class="form-control custom-select" id="balsheet_type">
+                                        <option value="A">Asset</option>
+                                        <option value="L">Libility</option>
+                                        <option value="R">Income</option>
+                                        <option value="E">Expenses</option>
+                                    </select>
+                                    <small class="form-control-feedback"> Balance-Sheet Type </small> </div>
+                            </div>
+                            <div class="col-md-6">
+                                <div class="form-group">
+                                    <label class="control-label">Group</label>
+                                    <select class="form-control custom-select" id="group">
+                                    </select>
+                                    <small class="form-control-feedback"> Group </small> </div>
+                            </div>
+                         </div>
+                         <div class="row p-t-20">
+                            <div class="col-md-6">
+                                <div class="form-group">
+                                    <label class="control-label">Sub-Group</label>
+                                    <select class="form-control custom-select" id="subgroup">
+                                    </select>
+                                    <small class="form-control-feedback"> Sub-Group </small> </div>
+                            </div>
+                            <div class="col-md-6">
+                                <div class="form-group">
+                                    <label class="control-label">Sub Sub Group</label>
+                                    <select class="form-control custom-select" id="subsubgroup">
+                                    </select>
+                                    <small class="form-control-feedback"> Sub-Sub-Group </small> </div>
+                            </div>
+                         </div>
+                         <div class="row p-t-20">
+                            <!--/span-->
+                            <div class="col-md-6">
+                                <div class="form-group has-danger">
+                                    <label class="control-label">Gl Name</label>
+                                    <input type="text" id="lastName" class="form-control form-control-danger" placeholder="12n" id="glname">
+                                    <small class="form-control-feedback"> Gl Name </small> </div>
+                            </div>
+                            <!--/span-->
+                            <div class="col-md-6">
+                                <div class="form-group">
+                                    <label class="control-label">GL Type</label>
+                                    <select class="form-control custom-select" id="gltype">
+                                    </select>
+                                    <small class="form-control-feedback"> Gl Type </small> </div>
+                            </div>
+                        </div>
+                        <!--/row-->
+                        <div class="row">
+                            <div class="col-md-6">
+                                <div class="form-group has-success">
+                                    <label class="control-label">Status</label>
+                                    <select class="form-control custom-select">
+                                        <option value="E">Enable</option>
+                                        <option value="D">Disable</option>
+                                    </select>
+                                    <small class="form-control-feedback"> Select GL status</small> </div>
+                            </div>
+                            <!--/span-->
+                            <div class="col-md-6">
+                                <div class="form-group">
+                                    <label class="control-label">Opening Date</label>
+                                    <input type="date" class="form-control" placeholder="dd/mm/yyyy">
+                                </div>
+                            </div>
+                            <!--/span-->
+                        </div>
+                        <!--/row-->
+                        <div class="row">
+                            <div class="col-md-6">
+                                <div class="form-group">
+                                    <label class="custom-control custom-checkbox m-b-0">
+                                            <input type="checkbox" class="custom-control-input">
+                                            <span class="custom-control-label">Account Flag</span>
+                                    </label>
+                                    <label class="custom-control custom-checkbox m-b-0">
+                                            <input type="checkbox" class="custom-control-input">
+                                            <span class="custom-control-label">TDS Applicable Flag</span>
+                                    </label>
+                                </div>
+                            </div>
+                            <!--/span-->
+                            <div class="col-md-6">
+                                <div class="form-group">
+                                    
+                                </div>
+                            </div>
+                            <!--/span-->
+                        </div>
+
+                    </div>
+                    <div class="form-actions">
+                        <button type="submit" class="btn btn-success"> <i class="fa fa-check"></i> Save</button>
+                        <button type="button" class="btn btn-inverse">Cancel</button>
+                    </div>
+                </form>
+            </div>
 	    </div>
 	</div>
 </div>
