@@ -1,0 +1,132 @@
+var tree=[{"module_name":"Administration",
+"module_id":1,
+"menu":[{
+		"menu_id":1,
+		"menu_name":"Master",
+		"module_id":1,
+		"parent_id":null,
+		"menu_type":"M",
+		"menu":[{
+				"menu_id":101,
+				"menu_name":"User Master",
+				"module_id":1,
+				"parent_id":1,
+				"page_name":"user_master.html",
+				"menu_type":"F",
+				},
+				{
+				"menu_id":102,
+				"menu_name":"Module Master",
+				"module_id":1,
+				"parent_id":1,
+				"page_name":"module_master.html",
+				"menu_type":"F",
+				},
+				{
+				"menu_id":103,
+				"menu_name":"Menu Master",
+				"module_id":1,
+				"parent_id":1,
+				"page_name":"menu_master.html",
+				"menu_type":"F",
+				}]
+		},
+		{
+		"menu_id":2,
+		"menu_name":"Transaction",
+		"module_id":1,
+		"parent_id":null,
+		"menu_type":"M"
+		}
+		]
+		},
+{"module_name":"Store Management",
+"module_id":2,
+"menu":[{
+		"menu_id":3,
+		"menu_name":"Master",
+		"module_id":2,
+		"parent_id":null,
+		"menu_type":"M"
+		},
+		{
+		"menu_id":4,
+		"menu_name":"Transaction",
+		"module_id":2,
+		"parent_id":null,
+		"menu_type":"M"
+		},
+		{
+		"menu_id":5,
+		"menu_name":"Report",
+		"module_id":2,
+		"parent_id":null,
+		"menu_type":"M"
+		}
+		]},
+{"module_name":"Finance",
+"module_id":2,
+"menu": [{
+		"menu_id":3,
+		"menu_name":"Master",
+		"module_id":2,
+		"parent_id":null,
+		"menu_type":"M",
+		"menu":[{
+				"menu_id":101,
+				"menu_name":"GL Master",
+				"module_id":1,
+				"parent_id":1,
+				"page_name":"gl_master",
+				"menu_type":"F",
+				},
+				{
+				"menu_id":102,
+				"menu_name":"Account Master",
+				"module_id":1,
+				"parent_id":1,
+				"page_name":"account_master.html",
+				"menu_type":"F",
+				},
+				{
+				"menu_id":103,
+				"menu_name":"Product Master",
+				"module_id":1,
+				"parent_id":1,
+				"page_name":"product_master.html",
+				"menu_type":"F",
+				}]
+		},
+		{
+		"menu_id":4,
+		"menu_name":"Transaction",
+		"module_id":2,
+		"parent_id":null,
+		"menu_type":"M",
+		"menu":[{
+				"menu_id":101,
+				"menu_name":"Payment",
+				"module_id":1,
+				"parent_id":1,
+				"page_name":"payment.html",
+				"menu_type":"F",
+				},
+				{
+				"menu_id":102,
+				"menu_name":"Receipt",
+				"module_id":1,
+				"parent_id":1,
+				"page_name":"receipt.html",
+				"menu_type":"F",
+				}]
+		},
+		{
+		"menu_id":5,
+		"menu_name":"Report",
+		"module_id":2,
+		"parent_id":null,
+		"menu_type":"M"
+		}
+		]
+}
+];
