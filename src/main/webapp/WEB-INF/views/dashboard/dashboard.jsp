@@ -28,13 +28,14 @@
 </head>
 
 <body class="skin-default fixed-layout">
+
     <!-- ============================================================== -->
     <!-- Preloader - style you can find in spinners.css -->
     <!-- ============================================================== -->
     <div class="preloader">
         <div class="loader">
             <div class="loader__figure"></div>
-            <p class="loader__label">Elite admin</p>
+            <p class="loader__label">Elite admin </p>
         </div>
     </div>
     <!-- ============================================================== -->
@@ -338,7 +339,7 @@
                 <!-- Sidebar navigation-->
                 <nav class="sidebar-nav">
                     <ul id="sidebarnav">
-                        <li class="user-pro"> <a class="has-arrow waves-effect waves-dark" href="javascript:void(0)" aria-expanded="false"><img src="${pageContext.request.contextPath}/assets/images/users/1.jpg" alt="user-img" class="img-circle"><span class="hide-menu">Nikhil Wandhare</span></a>
+                        <li class="user-pro"> <a class="has-arrow waves-effect waves-dark" href="javascript:void(0)" aria-expanded="false"><img src="${pageContext.request.contextPath}/assets/images/users/1.jpg" alt="user-img" class="img-circle"><span class="hide-menu">${userName}</span></a>
                             <ul aria-expanded="false" class="collapse">
                                 <li><a href="javascript:void(0)"><i class="ti-user"></i> My Profile</a></li>
                                 <li><a href="javascript:void(0)"><i class="ti-wallet"></i> My Balance</a></li>

@@ -99,6 +99,11 @@
                             Don't have an account? <a href="pages-register2.html" class="text-primary m-l-5"><b>Sign Up</b></a>
                         </div>
                     </div>
+                    <div class="form-group m-b-0">
+                    	<div class="col-sm-12 text-center message-group">
+                    	
+                    	</div>
+                    </div>
                 </form>
                 <form class="form-horizontal" id="recoverform" action="http://eliteadmin.themedesigner.in/demos/bt4/material/index.html">
                     <div class="form-group ">
@@ -201,10 +206,11 @@
 				param : $("#company").val()+"~"+$("#branch").val()
 			},
 			success : function(resp) {
+				finyearList = "";
  				 $.each(resp,function(key,val){
  					finyearList = finyearList + "<option value='"+resp[key].ADFM_FINYR+"'>"+resp[key].ADFM_FINYR+"</option>";
 				}); 			
- 				$("#finyear").text("");	 
+ 				$("#finyear").empty();	 
  				 $("#finyear").append(finyearList);
 			}
 		});
@@ -214,7 +220,6 @@
         $.ajax({
 			url : "${pageContext.request.contextPath}/login",
 			type : 'post',
-			dataType : 'json',
 			async: false,
 			data : {
 				company_id : $("#company").val(),
@@ -225,15 +230,19 @@
 			},
 			success : function(resp) {
 				console.log(resp);
- 				 /* $.each(resp,function(key,val){
- 					companyList = companyList + "<option value='"+resp[key].ADCM_ID+"'>"+resp[key].ADCM_NAME+"</option>";
-				});  */				 
-				window.location.replace("${pageContext.request.contextPath}/dashboard");
+				$(".message-group").empty();
+				if(resp.result == "Success")
+					{
+						$(".message-group").append('<div class="alert alert-success">'+resp.result+'-'+resp.message+'</div>');
+						window.location.replace("${pageContext.request.contextPath}/dashboard");
+					}
+				else{
+						$(".message-group").append('<div class="alert alert-danger">'+resp.result+'-'+resp.message+'</div>');
+					}
+ 				 
  				
  				 
-			},
-			error : function(resp){console.log("Error-"+resp);
-			window.location.replace("${pageContext.request.contextPath}/dashboard");}
+			}
 		});
 		});
 	});

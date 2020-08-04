@@ -18,7 +18,7 @@
             	<li class="breadcrumb-item"><a href="javascript:void(0)">Master</a></li>
                 <li class="breadcrumb-item active">GL Master</li>
             </ol>
-        	<button type="button" class="btn btn-info d-none d-lg-block m-l-15"><i class="fa fa-plus-circle"></i> Create New</button>
+        	<button type="button" class="btn btn-info d-none d-lg-block m-l-15"><i class="mdi mdi-plus"></i> Create New</button>
        	</div>
 	</div>
 </div>
@@ -70,7 +70,7 @@
                             <!--/span-->
                             <div class="col-md-6">
                                 <div class="form-group has-danger">
-                                    <label class="control-label">Gl Name</label>
+                                    <label class="control-label">GL Name</label>
                                     <input type="text" id="lastName" class="form-control form-control-danger" placeholder="12n" id="glname">
                                     <small class="form-control-feedback"> Gl Name </small> </div>
                             </div>
@@ -128,8 +128,8 @@
 
                     </div>
                     <div class="form-actions">
-                        <button type="submit" class="btn btn-success"> <i class="fa fa-check"></i> Save</button>
-                        <button type="button" class="btn btn-inverse">Cancel</button>
+                        <button type="submit" class="btn btn-success"> <i class="mdi mdi-check"></i> Save</button>
+                        <button type="button" class="btn btn-inverse"><i class="mdi mdi-close"></i>Cancel</button>
                     </div>
                 </form>
             </div>
