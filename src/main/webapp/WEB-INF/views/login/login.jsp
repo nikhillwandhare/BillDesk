@@ -13,7 +13,6 @@
     <!-- Favicon icon -->
     <link rel="icon" type="image/png" sizes="16x16" href="${pageContext.request.contextPath}/assets/images/favicon.png">
     <title>Bill Desk </title>
-    
     <!-- page css -->
     <link href="${pageContext.request.contextPath}/assets/dist/css/pages/login-register-lock.css" rel="stylesheet">
     <!-- Custom CSS -->

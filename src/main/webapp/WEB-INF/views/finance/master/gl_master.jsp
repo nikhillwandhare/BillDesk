@@ -4,7 +4,7 @@
 <html>
 <head>
 <meta charset="ISO-8859-1">
-<title>Insert title here</title>
+<title>GL Master</title>
 </head>
 <body>
 <div class="row page-titles">
@@ -90,6 +90,38 @@
                         </div>
                         <!--/row-->
                         <div class="row">
+                        	<div class="col-md-6">
+                        		<div class="form-group">
+                        			<label class="control-label">Schedule</label>
+                                	<select class="form-control custom-select" id="schedule">
+                                	</select>
+                                </div>
+                        	</div>
+                        	<div class="col-md-6">
+                        		<div class="form-group">
+                        			<label class="control-label">Contra Schedule</label>
+                                	<select class="form-control custom-select" id="contraSchedule">
+                                	</select>
+                                </div>
+                        	</div>
+                        </div>
+                        <div class="row">
+                        	<div class="col-md-6">
+                        		<div class="form-group">
+                        			<label class="control-label">Applicable Branch</label>
+                        			<select class="select2 m-b-10 select2-multiple select2-hidden-accessible" id="branchStr" style="width: 100%" multiple="" data-placeholder="Choose" data-select2-id="4" tabindex="-1" aria-hidden="true">
+                                	</select>
+                                </div>
+                        	</div>
+                        	<div class="col-md-6">
+                        		<div class="form-group">
+	                        		<label class="control-label">GL Branch</label>
+	                        		<select class="form-control custom-select" id="glBranch">
+	                        		</select>
+	                        	</div>
+                        	</div>
+                        </div>
+                        <div class="row">
                             <div class="col-md-6">
                                 <div class="form-group has-success">
                                     <label class="control-label">Status</label>
@@ -151,10 +183,154 @@
 </div>
 <script>
 $(document).ready(function(){
-$("#balsheet_type").change(function(){
-	console.log($("#balsheet_type").val());
-	if($("#balsheet_type").val() == "X"){$("#accountFlagDiv").hide();}else{$("#accountFlagDiv").show();}
-});
+	$("#branchStr").select2();
+	
+    $.ajax({
+		url : "${pageContext.request.contextPath}/getList",
+		type : 'post',
+		dataType : 'json',
+		async: false,
+		data : {
+			Id : 2,
+			param : "${companyId}"
+		},
+		success : function(resp) {
+			var branchList = "";
+				 $.each(resp,function(key,val){
+					branchList = branchList + '<option value="'+resp[key].ADCM_ID+'" data-select2-id="'+resp[key].ADCM_ID+'">'+resp[key].ADCM_NAME+'</option>';
+			}); 		
+				$("#branchStr").empty();		 
+				$("#branchStr").append(branchList);	
+		}
+	});
+    
+    $.ajax({
+		url : "${pageContext.request.contextPath}/getList",
+		type : 'post',
+		dataType : 'json',
+		async: false,
+		data : {
+			Id : 5,
+			param : null
+		},
+		success : function(resp) {
+			var glbranchList = "";
+				 $.each(resp,function(key,val){
+					glbranchList = glbranchList + '<option value="'+resp[key].FAGB_CODE+'">'+resp[key].FAGB_NAME+'</option>';
+			}); 		
+				$("#glBranch").empty();		 
+				$("#glBranch").append(glbranchList);	
+		}
+	});
+	
+    $.ajax({
+		url : "${pageContext.request.contextPath}/getList",
+		type : 'post',
+		dataType : 'json',
+		async: false,
+		data : {
+			Id : 6,
+			param :  "'"+$("#balsheet_type").val()+"'"+"~"+null
+		},
+		success : function(resp) {
+			var maingroupList = "";
+				 $.each(resp,function(key,val){
+					maingroupList = maingroupList + '<option value="'+resp[key].FAGROUP_ID+'">'+resp[key].FAGROUP_NAME+'</option>';
+			}); 		
+				$("#group").empty();		 
+				$("#group").append(maingroupList);	
+		}
+	});
+    
+    $.ajax({
+		url : "${pageContext.request.contextPath}/getList",
+		type : 'post',
+		dataType : 'json',
+		async: false,
+		data : {
+			Id : 7,
+			param : $("#group").val()+"~"+null
+		},
+		success : function(resp) {
+			var subgroupList = "";
+				 $.each(resp,function(key,val){
+					subgroupList = subgroupList + '<option value="'+resp[key].FASGROUP_ID+'">'+resp[key].FASGROUP_NAME+'</option>';
+			}); 		
+				$("#subgroup").empty();		 
+				$("#subgroup").append(subgroupList);	
+		}
+	});
+    
+    var v_gltype=$("#gltype").val()==null?null:"'"+$("#gltype").val()+"'";
+    
+    $.ajax({
+		url : "${pageContext.request.contextPath}/getList",
+		type : 'post',
+		dataType : 'json',
+		async: false,
+		data : {
+			Id : 8,
+			param : v_gltype
+		},
+		success : function(resp) {
+			var subgroupList = "";
+				 $.each(resp,function(key,val){
+					subgroupList = subgroupList + '<option value="'+resp[key].FASGROUP_ID+'">'+resp[key].FASGROUP_NAME+'</option>';
+			}); 		
+				$("#subgroup").empty();		 
+				$("#subgroup").append(subgroupList);	
+		}
+	});
+   
+	$("#balsheet_type").change(function(){
+		if($("#balsheet_type").val() == "X"){$("#accountFlagDiv").hide();}else{$("#accountFlagDiv").show();}});
+	
+	$("#balsheet_type").change(function(){
+		
+	    $.ajax({
+			url : "${pageContext.request.contextPath}/getList",
+			type : 'post',
+			dataType : 'json',
+			async: false,
+			data : {
+				Id : 6,
+				param :  "'"+$("#balsheet_type").val()+"'"+"~"+null
+			},
+			success : function(resp) {
+				var maingroupList = "";
+					 $.each(resp,function(key,val){
+						maingroupList = maingroupList + '<option value="'+resp[key].FAGROUP_ID+'">'+resp[key].FAGROUP_NAME+'</option>';
+				}); 		
+					$("#group").empty();		 
+					$("#group").append(maingroupList);	
+			}
+		});
+		
+	});
+	
+	$("#group").change(function(){
+		
+	    $.ajax({
+			url : "${pageContext.request.contextPath}/getList",
+			type : 'post',
+			dataType : 'json',
+			async: false,
+			data : {
+				Id : 7,
+				param : $("#group").val()+"~"+null
+			},
+			success : function(resp) {
+				var subgroupList = "";
+					 $.each(resp,function(key,val){
+						subgroupList = subgroupList + '<option value="'+resp[key].FASGROUP_ID+'">'+resp[key].FASGROUP_NAME+'</option>';
+				}); 		
+					$("#subgroup").empty();		 
+					$("#subgroup").append(subgroupList);	
+			}
+		});
+		
+	});
+	
 });
 </script>
 </body>

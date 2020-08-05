@@ -19,6 +19,16 @@
     <link href="${pageContext.request.contextPath}/assets/dist/css/style.min.css" rel="stylesheet">
     <!-- Dashboard 1 Page CSS -->
     <link href="${pageContext.request.contextPath}/assets/dist/css/pages/dashboard4.css" rel="stylesheet">
+
+	<!-- GL Master Css -->
+	<link href="${pageContext.request.contextPath}/assets/node_modules/bootstrap-datepicker/bootstrap-datepicker.min.css" rel="stylesheet" type="text/css" />
+    <link href="${pageContext.request.contextPath}/assets/node_modules/select2/dist/css/select2.min.css" rel="stylesheet" type="text/css" />
+    <link href="${pageContext.request.contextPath}/assets/node_modules/switchery/dist/switchery.min.css" rel="stylesheet" />
+    <link href="${pageContext.request.contextPath}/assets/node_modules/bootstrap-select/bootstrap-select.min.css" rel="stylesheet" />
+    <link href="${pageContext.request.contextPath}/assets/node_modules/bootstrap-tagsinput/dist/bootstrap-tagsinput.css" rel="stylesheet" />
+    <link href="${pageContext.request.contextPath}/assets/node_modules/bootstrap-touchspin/dist/jquery.bootstrap-touchspin.min.css" rel="stylesheet" />
+    <link href="${pageContext.request.contextPath}/assets/node_modules/multiselect/css/multi-select.css" rel="stylesheet" type="text/css" />
+
     <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
     <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
     <!--[if lt IE 9]>
@@ -852,7 +862,7 @@
         <!-- footer -->
         <!-- ============================================================== -->
         <footer class="footer">
-            © 2020 Eliteadmin by themedesigner.in
+            © 2020 BillDesk by Nikhil Wandhare
         </footer>
         <!-- ============================================================== -->
         <!-- End footer -->
@@ -888,6 +898,18 @@
     <!-- Chart JS -->
     <script src="${pageContext.request.contextPath}/assets/dist/js/dashboard4.js"></script>
 	<script src="${pageContext.request.contextPath}/assets/data/treeData.js"></script>
+	<script src="${pageContext.request.contextPath}/assets/node_modules/select2/dist/js/select2.full.min.js" type="text/javascript"></script>
+	<script src="${pageContext.request.contextPath}/assets/node_modules/bootstrap-select/bootstrap-select.min.js"></script>
+	<script src="${pageContext.request.contextPath}/assets/node_modules/multiselect/js/jquery.multi-select.js"></script>
+	
+	<!-- GL Master Js -->
+    <script src="${pageContext.request.contextPath}/assets/node_modules/switchery/dist/switchery.min.js"></script>
+    <script src="${pageContext.request.contextPath}/assets/node_modules/select2/dist/js/select2.full.min.js" type="text/javascript"></script>
+    <script src="${pageContext.request.contextPath}/assets/node_modules/bootstrap-select/bootstrap-select.min.js" type="text/javascript"></script>
+    <script src="${pageContext.request.contextPath}/assets/node_modules/bootstrap-tagsinput/dist/bootstrap-tagsinput.min.js"></script>
+    <script src="${pageContext.request.contextPath}/assets/node_modules/bootstrap-touchspin/dist/jquery.bootstrap-touchspin.js" type="text/javascript"></script>
+    <script src="${pageContext.request.contextPath}/assets/node_modules/dff/dff.js" type="text/javascript"></script>
+    <script type="text/javascript" src="${pageContext.request.contextPath}/assets/node_modules/multiselect/js/jquery.multi-select.js"></script>
 	<script>
 	var treeSlave = "";
 	var menus = 0;
