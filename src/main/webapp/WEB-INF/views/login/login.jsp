@@ -194,7 +194,7 @@
 		});
 	//});
 
-	$("#branch").change(function(){
+	//$("#branch").change(function(){
 		
         $.ajax({
 			url : "${pageContext.request.contextPath}/getList",
@@ -214,7 +214,7 @@
  				 $("#finyear").append(finyearList);
 			}
 		});
-	});
+	//});
 	$("#login").click(function(){
 		
         $.ajax({

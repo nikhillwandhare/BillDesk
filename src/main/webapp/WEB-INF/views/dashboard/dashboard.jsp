@@ -922,37 +922,81 @@ $(document).ready(function(){
 		dataType : 'json',
 		async: false,
 		data : {
-			user_id : 11//$("#user").val()+"~"+$("#branch").val()
+			user_id : "${userId}"
 		},
 		success : function(resp) {
 			
-					 var module_list = resp.module_list;
-					 var menu_list = resp.menu_list;
-					 var form_list = resp.form_list;
+					 var LEVEL1 = resp.LEVEL1;
+					 var LEVEL2 = resp.LEVEL2;
+					 var LEVEL3 = resp.LEVEL3;
+					 var LEVEL4 = resp.LEVEL4;
+					 var LEVEL5 = resp.LEVEL5;
 					 
-					 for(var i = 0; i < module_list.length; i++)
+					 var ln_LEVEL1 =  LEVEL1.length;
+					 var ln_LEVEL2 =  LEVEL2.length;
+					 var ln_LEVEL3 =  LEVEL3.length;
+					 var ln_LEVEL4 =  LEVEL4.length;
+					 var ln_LEVEL5 =  LEVEL5.length;
+					 
+					 for(var i = 0; i < ln_LEVEL1; i++)
 						{
-						 treeSlave = treeSlave +'<li> <a class="has-arrow waves-effect waves-dark" href="javascript:void(0)" aria-expanded="false"><i class="ti-files"></i><span class="hide-menu">'+module_list[i].NAME+'</span></a>';
+						 treeSlave = treeSlave +'<li> <a class="has-arrow waves-effect waves-dark" href="javascript:void(0)" aria-expanded="false"><i class="ti-files"></i><span class="hide-menu">'+LEVEL1[i].NAME+'</span></a>';
 					                   
-							menus = menu_list.length;
-							if(menus != 0)
+							if(ln_LEVEL2 != 0)
 							{
 							treeSlave = treeSlave +'<ul aria-expanded="false" class="collapse">';
-							for(var j = 0; j < menu_list.length; j++)
+							for(var j = 0; j < ln_LEVEL2; j++)
 							{
-								if(module_list[i].ID ==  menu_list[j].PARENT)
+								if(LEVEL1[i].ID ==  LEVEL2[j].PARENT)
 								{	
-						        treeSlave = treeSlave +'<li><a href="javascript:void(0)" class="has-arrow" >'+menu_list[j].NAME+'</a>';
-								forms = form_list.length;
-								if(forms != 0)
+						        treeSlave = treeSlave +'<li><a href="javascript:void(0)" class="has-arrow" >'+LEVEL2[j].NAME+'</a>';
+								
+								if(ln_LEVEL3 != 0)
 								{		
 						        treeSlave = treeSlave +'<ul aria-expanded="false" class="collapse">';
 						        
-								for(var k = 0; k < form_list.length; k++)
+								for(var k = 0; k < ln_LEVEL3; k++)
 								{
-									if(menu_list[j].ID ==  form_list[k].PARENT)
+									if(LEVEL2[j].ID ==  LEVEL3[k].PARENT && LEVEL3[k].FORM_TYPE != 'M')
 									{
-						        	treeSlave = treeSlave +'<li><a href="#" class="page" data-page_name="'+form_list[k].PAGE_NAME+'">'+form_list[k].NAME+'</a></li>';
+										treeSlave = treeSlave +'<li><a href="#" class="page" data-page_name="'+LEVEL3[k].PAGE_NAME+'">'+LEVEL3[k].NAME+'</a></li>';
+									}
+									else if(LEVEL2[j].ID ==  LEVEL3[k].PARENT)
+									{
+										treeSlave = treeSlave +'<li><a href="javascript:void(0)" class="has-arrow" >'+LEVEL3[k].NAME+'</a>';
+										
+										if(ln_LEVEL4 != 0)
+										{
+											treeSlave = treeSlave +'<ul aria-expanded="false" class="collapse">';
+											
+											for(var l = 0; l < ln_LEVEL4; l++)
+											{
+												if(LEVEL3[k].ID ==  LEVEL4[l].PARENT && LEVEL4[l].FORM_TYPE != 'M')
+												{
+													treeSlave = treeSlave +'<li><a href="#" class="page" data-page_name="'+LEVEL4[l].PAGE_NAME+'">'+LEVEL4[l].NAME+'</a></li>';
+												}
+												else if(LEVEL3[k].ID ==  LEVEL4[l].PARENT)
+													{
+														treeSlave = treeSlave +'<li><a href="javascript:void(0)" class="has-arrow" >'+LEVEL4[l].NAME+'</a>';
+														 if(ln_LEVEL5 != 0)
+														{
+															treeSlave = treeSlave +'<ul aria-expanded="false" class="collapse">';
+															
+															for(var m = 0; m < ln_LEVEL5; m++)
+															{
+																if(LEVEL4[l].ID ==  LEVEL5[m].PARENT && LEVEL5[m].FORM_TYPE != 'M')
+																{
+																	treeSlave = treeSlave +'<li><a href="#" class="page" data-page_name="'+LEVEL5[m].PAGE_NAME+'">'+LEVEL5[m].NAME+'</a></li>';
+																}
+															}
+															treeSlave = treeSlave +'</ul>';
+														} 
+														treeSlave = treeSlave +'</li>';
+													}
+												}
+											treeSlave = treeSlave +'</ul>';
+										}
+										treeSlave = treeSlave +'</li>';
 									}
 								}		   
 						        treeSlave = treeSlave +'</ul>';

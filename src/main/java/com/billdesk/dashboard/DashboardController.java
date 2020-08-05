@@ -39,12 +39,16 @@ public class DashboardController {
 		int userid = Integer.parseInt(request.getParameter("user_id"));
 		map.put("p_user_id", userid);
 		result = call.executeProcedure("BILLDESK", "get_menu_tree", map);
-		ArrayList<Object> module_list = (ArrayList<Object>)result.get("MODULE_LIST");
-		ArrayList<Object> menu_list = (ArrayList<Object>)result.get("MENU_LIST");
-		ArrayList<Object> form_list = (ArrayList<Object>)result.get("FORM_LIST");
-		resultData.put("module_list", module_list);
-		resultData.put("menu_list", menu_list);
-		resultData.put("form_list", form_list);
+		ArrayList<Object> LEVEL1 = (ArrayList<Object>)result.get("LEVEL1");
+		ArrayList<Object> LEVEL2 = (ArrayList<Object>)result.get("LEVEL2");
+		ArrayList<Object> LEVEL3 = (ArrayList<Object>)result.get("LEVEL3");
+		ArrayList<Object> LEVEL4 = (ArrayList<Object>)result.get("LEVEL4");
+		ArrayList<Object> LEVEL5 = (ArrayList<Object>)result.get("LEVEL5");
+		resultData.put("LEVEL1", LEVEL1);
+		resultData.put("LEVEL2", LEVEL2);
+		resultData.put("LEVEL3", LEVEL3);
+		resultData.put("LEVEL4", LEVEL4);
+		resultData.put("LEVEL5", LEVEL5);
 		return resultData;
 	}
 	
