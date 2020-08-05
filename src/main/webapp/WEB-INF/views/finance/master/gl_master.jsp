@@ -38,41 +38,46 @@
                                         <option value="A">Asset</option>
                                         <option value="L">Libility</option>
                                         <option value="R">Income</option>
-                                        <option value="E">Expenses</option>
+                                        <option value="X">Expenses</option>
                                     </select>
-                                    <small class="form-control-feedback"> Balance-Sheet Type </small> </div>
+                                 </div>
                             </div>
                             <div class="col-md-6">
                                 <div class="form-group">
                                     <label class="control-label">Group</label>
                                     <select class="form-control custom-select" id="group">
                                     </select>
-                                    <small class="form-control-feedback"> Group </small> </div>
+                                </div>
                             </div>
                          </div>
-                         <div class="row p-t-20">
+                         <div class="row">
                             <div class="col-md-6">
                                 <div class="form-group">
                                     <label class="control-label">Sub-Group</label>
                                     <select class="form-control custom-select" id="subgroup">
                                     </select>
-                                    <small class="form-control-feedback"> Sub-Group </small> </div>
+                                </div>
                             </div>
-                            <div class="col-md-6">
+                            <div class="col-md-3">
                                 <div class="form-group">
-                                    <label class="control-label">Sub Sub Group</label>
-                                    <select class="form-control custom-select" id="subsubgroup">
-                                    </select>
-                                    <small class="form-control-feedback"> Sub-Sub-Group </small> </div>
+                                    <label class="control-label">Prefix</label>
+                                    <input type="text" id="prefix" class="form-control form-control-danger" placeholder="Prefix">
+                                </div>
+                            </div>
+                            <div class="col-md-3">
+                                <div class="form-group">
+                                    <label class="control-label">Default</label>
+                                    <input type="text" id="prefix2" class="form-control form-control-danger" placeholder="Default">
+                                </div>
                             </div>
                          </div>
-                         <div class="row p-t-20">
+                         <div class="row">
                             <!--/span-->
                             <div class="col-md-6">
                                 <div class="form-group has-danger">
                                     <label class="control-label">GL Name</label>
-                                    <input type="text" id="lastName" class="form-control form-control-danger" placeholder="12n" id="glname">
-                                    <small class="form-control-feedback"> Gl Name </small> </div>
+                                    <input type="text" class="form-control form-control-danger" placeholder="GL Name" id="glname">
+                                </div>
                             </div>
                             <!--/span-->
                             <div class="col-md-6">
@@ -80,7 +85,7 @@
                                     <label class="control-label">GL Type</label>
                                     <select class="form-control custom-select" id="gltype">
                                     </select>
-                                    <small class="form-control-feedback"> Gl Type </small> </div>
+                                </div>
                             </div>
                         </div>
                         <!--/row-->
@@ -92,7 +97,7 @@
                                         <option value="E">Enable</option>
                                         <option value="D">Disable</option>
                                     </select>
-                                    <small class="form-control-feedback"> Select GL status</small> </div>
+                                </div>
                             </div>
                             <!--/span-->
                             <div class="col-md-6">
@@ -105,36 +110,52 @@
                         </div>
                         <!--/row-->
                         <div class="row">
-                            <div class="col-md-6">
+                            <div class="col-md-4">
                                 <div class="form-group">
-                                    <label class="custom-control custom-checkbox m-b-0">
-                                            <input type="checkbox" class="custom-control-input">
+                                    <label class="custom-control custom-checkbox m-b-0" id="accountFlagDiv">
+                                            <input type="checkbox" class="custom-control-input" id="accountFlag">
                                             <span class="custom-control-label">Account Flag</span>
                                     </label>
-                                    <label class="custom-control custom-checkbox m-b-0">
-                                            <input type="checkbox" class="custom-control-input">
+                                </div>
+                            </div>
+                            <!--/span-->
+                            <div class="col-md-4">
+                                <div class="form-group">
+                                    <label class="custom-control custom-checkbox m-b-0" id="tdsFlagDiv">
+                                            <input type="checkbox" class="custom-control-input" id="tdsFlag">
                                             <span class="custom-control-label">TDS Applicable Flag</span>
                                     </label>
                                 </div>
                             </div>
                             <!--/span-->
-                            <div class="col-md-6">
+                            <div class="col-md-4">
                                 <div class="form-group">
-                                    
+                                    <label class="custom-control custom-checkbox m-b-0" id="directorFlagDiv">
+                                            <input type="checkbox" class="custom-control-input" id="directorFlag">
+                                            <span class="custom-control-label">Director Expense Flag</span>
+                                    </label>
                                 </div>
                             </div>
                             <!--/span-->
                         </div>
 
                     </div>
-                    <div class="form-actions">
+                    <div class="form-actions" style="text-align:right;">
                         <button type="submit" class="btn btn-success"> <i class="mdi mdi-check"></i> Save</button>
-                        <button type="button" class="btn btn-inverse"><i class="mdi mdi-close"></i>Cancel</button>
+                        <button type="button" class="btn btn-dark"><i class="mdi mdi-close"></i>Cancel</button>
                     </div>
                 </form>
             </div>
 	    </div>
 	</div>
 </div>
+<script>
+$(document).ready(function(){
+$("#balsheet_type").change(function(){
+	console.log($("#balsheet_type").val());
+	if($("#balsheet_type").val() == "X"){$("#accountFlagDiv").hide();}else{$("#accountFlagDiv").show();}
+});
+});
+</script>
 </body>
 </html>

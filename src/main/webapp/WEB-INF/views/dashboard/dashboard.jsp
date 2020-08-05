@@ -35,7 +35,7 @@
     <div class="preloader">
         <div class="loader">
             <div class="loader__figure"></div>
-            <p class="loader__label">Elite admin </p>
+            <p class="loader__label">BillDesk Admin </p>
         </div>
     </div>
     <!-- ============================================================== -->
@@ -300,7 +300,7 @@
                         <!-- User Profile -->
                         <!-- ============================================================== -->
                         <li class="nav-item dropdown u-pro">
-                            <a class="nav-link dropdown-toggle waves-effect waves-dark profile-pic" href="#" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"><img src="${pageContext.request.contextPath}/assets/images/users/1.jpg" alt="user" class=""> <span class="hidden-md-down">Niks &nbsp;<i class="fa fa-angle-down"></i></span> </a>
+                            <a class="nav-link dropdown-toggle waves-effect waves-dark profile-pic" href="#" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"><img src="${pageContext.request.contextPath}/assets/images/users/1.jpg" alt="user" class=""> <span class="hidden-md-down">"${userName}" &nbsp;<i class="mdi mdi-account"></i></span> </a>
                             <div class="dropdown-menu dropdown-menu-right animated flipInY">
                                 <!-- text-->
                                 <a href="javascript:void(0)" class="dropdown-item"><i class="ti-user"></i> My Profile</a>
@@ -348,13 +348,13 @@
                                 <li><a href="javascript:void(0)"><i class="fa fa-power-off"></i> Logout</a></li>
                             </ul>
                         </li>
-                        <li> <a class="has-arrow waves-effect waves-dark" href="javascript:void(0)" aria-expanded="false"><i class="icon-speedometer"></i><span class="hide-menu">Dashboard <span class="badge badge-pill badge-cyan ml-auto">4</span></span></a>
-                            <ul aria-expanded="false" class="collapse">
+                        <li> <a class="has-arrow waves-effect waves-dark dashboardCall" href="javascript:void(0)" aria-expanded="false"><i class="icon-speedometer"></i><span class="hide-menu">Dashboard</span></a>
+                            <!-- <ul aria-expanded="false" class="collapse">
                                 <li><a href="index.html">Minimal </a></li>
                                 <li><a href="index2.html">Analytical</a></li>
                                 <li><a href="index3.html">Demographical</a></li>
                                 <li><a href="index4.html">Modern</a></li>
-                            </ul>
+                            </ul> -->
                         </li>
                     </ul>
                 </nav>
@@ -378,13 +378,13 @@
                 <!-- ============================================================== -->
                 <div class="row page-titles">
                     <div class="col-md-5 align-self-center">
-                        <h4 class="text-themecolor">Dashboard 4</h4>
+                        <h4 class="text-themecolor">Dashboard</h4>
                     </div>
                     <div class="col-md-7 align-self-center text-right">
                         <div class="d-flex justify-content-end align-items-center">
                             <ol class="breadcrumb">
                                 <li class="breadcrumb-item"><a href="javascript:void(0)">Home</a></li>
-                                <li class="breadcrumb-item active">Dashboard 4</li>
+                                <li class="breadcrumb-item active">Dashboard</li>
                             </ol>
                             <button type="button" class="btn btn-info d-none d-lg-block m-l-15"><i class="fa fa-plus-circle"></i> Create New</button>
                         </div>
@@ -940,7 +940,7 @@ $(document).ready(function(){
 					 
 					 for(var i = 0; i < ln_LEVEL1; i++)
 						{
-						 treeSlave = treeSlave +'<li> <a class="has-arrow waves-effect waves-dark" href="javascript:void(0)" aria-expanded="false"><i class="ti-files"></i><span class="hide-menu">'+LEVEL1[i].NAME+'</span></a>';
+						 treeSlave = treeSlave +'<li> <a class="has-arrow waves-effect waves-dark" href="javascript:void(0)" aria-expanded="false"><i class="'+LEVEL1[i].ICON_CLASS+'"></i><span class="hide-menu">'+LEVEL1[i].NAME+'</span></a>';
 					                   
 							if(ln_LEVEL2 != 0)
 							{
@@ -1015,39 +1015,9 @@ $(document).ready(function(){
 	});
 
 
-
-	
-//});
-/*
-for(var i = 0; i < tree.length; i++)
-{
- treeSlave = treeSlave +'<li> <a class="has-arrow waves-effect waves-dark" href="javascript:void(0)" aria-expanded="false"><i class="ti-files"></i><span class="hide-menu">'+tree[i].module_name+'</span></a>';
-               
-	menus = tree[i].menu;
-	if(menus != null)
-	{
-	treeSlave = treeSlave +'<ul aria-expanded="false" class="collapse">';
-	for(var j = 0; j < menus.length; j++)
-	{
-    treeSlave = treeSlave +'<li><a href="javascript:void(0)" class="has-arrow">'+menus[j].menu_name+'</a>';
-	forms = menus[j].menu;
-	if(forms != null)
-	{		
-    treeSlave = treeSlave +'<ul aria-expanded="false" class="collapse">';
-	for(var k = 0; k < forms.length; k++)
-	{
-    treeSlave = treeSlave +'<li><a href="#" onClick="callPage()">'+forms[k].menu_name+'</a></li>';
-	}		   
-    treeSlave = treeSlave +'</ul>';
-	}
-    treeSlave = treeSlave +'</li>';
-	}
-    treeSlave = treeSlave +'</ul>';
-	}
-    treeSlave = treeSlave +'</li>';
-}
-
-*/
+$(".dashboardCall").click(function(){
+	window.location.replace("${pageContext.request.contextPath}/dashboard");
+});
 	
 	</script>
 	
