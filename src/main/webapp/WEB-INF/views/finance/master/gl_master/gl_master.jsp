@@ -18,7 +18,7 @@
             	<li class="breadcrumb-item"><a href="javascript:void(0)">Master</a></li>
                 <li class="breadcrumb-item active">GL Master</li>
             </ol>
-        	<button type="button" class="btn btn-info d-none d-lg-block m-l-15"><i class="mdi mdi-plus"></i> Create New</button>
+        	<button type="button" class="btn btn-info d-none d-lg-block m-l-15" id="backToList"><i class="mdi mdi-chevron-double-left"></i> Back To List</button>
        	</div>
 	</div>
 </div>
@@ -185,6 +185,18 @@
 $(document).ready(function(){
 	$("#branchStr").select2();
 	
+	$("#backToList").click(function(){
+	    $.ajax({
+			url : "${pageContext.request.contextPath}/finance/master/glmasterlist",
+			type : 'post',
+			async : false,
+			success : function(resp) {
+				$(".container-fluid").empty();
+				$(".container-fluid").html(resp);
+			}
+	    });
+	});
+	
     $.ajax({
 		url : "${pageContext.request.contextPath}/getList",
 		type : 'post',
@@ -261,8 +273,6 @@ $(document).ready(function(){
 		}
 	});
     
-    var v_gltype=$("#gltype").val()==null?null:"'"+$("#gltype").val()+"'";
-    
     $.ajax({
 		url : "${pageContext.request.contextPath}/getList",
 		type : 'post',
@@ -270,18 +280,57 @@ $(document).ready(function(){
 		async: false,
 		data : {
 			Id : 8,
-			param : v_gltype
+			param : $("#gltype").val()==null?"Null":"'"+$("#gltype").val()+"'"
 		},
 		success : function(resp) {
 			var subgroupList = "";
 				 $.each(resp,function(key,val){
-					subgroupList = subgroupList + '<option value="'+resp[key].FASGROUP_ID+'">'+resp[key].FASGROUP_NAME+'</option>';
+					subgroupList = subgroupList + '<option value="'+resp[key].FAGM_TYCODE+'">'+resp[key].FAGM_TYNAME+'</option>';
 			}); 		
-				$("#subgroup").empty();		 
-				$("#subgroup").append(subgroupList);	
+				$("#gltype").empty();		 
+				$("#gltype").append(subgroupList);	
 		}
 	});
    
+    
+    $.ajax({
+		url : "${pageContext.request.contextPath}/getList",
+		type : 'post',
+		dataType : 'json',
+		async: false,
+		data : {
+			Id : 9,
+			param : "${companyId}"+"~"+"${branchId}"+"~"+"'"+$("#balsheet_type").val()+"'"+"~"+$("#schedule").val()
+		},
+		success : function(resp) {
+			var scheduleList = "";
+				 $.each(resp,function(key,val){
+					 scheduleList = scheduleList + '<option value="'+resp[key].FASCH_ID+'">'+resp[key].FASCH_NAME+'</option>';
+			}); 		
+				$("#schedule").empty();		 
+				$("#schedule").append(scheduleList);	
+		}
+	});
+    
+    $.ajax({
+		url : "${pageContext.request.contextPath}/getList",
+		type : 'post',
+		dataType : 'json',
+		async: false,
+		data : {
+			Id : 9,
+			param : "${companyId}"+"~"+"${branchId}"+"~"+"'"+$("#balsheet_type").val()+"'"+"~"+$("#contraSchedule").val()
+		},
+		success : function(resp) {
+			var contraScheduleList = "";
+				 $.each(resp,function(key,val){
+					 contraScheduleList = contraScheduleList + '<option value="'+resp[key].FASCH_ID+'">'+resp[key].FASCH_NAME+'</option>';
+			}); 		
+				$("#contraSchedule").empty();		 
+				$("#contraSchedule").append(contraScheduleList);	
+		}
+	});
+    
 	$("#balsheet_type").change(function(){
 		if($("#balsheet_type").val() == "X"){$("#accountFlagDiv").hide();}else{$("#accountFlagDiv").show();}});
 	

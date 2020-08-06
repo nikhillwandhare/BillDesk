@@ -28,6 +28,10 @@
     <link href="${pageContext.request.contextPath}/assets/node_modules/bootstrap-tagsinput/dist/bootstrap-tagsinput.css" rel="stylesheet" />
     <link href="${pageContext.request.contextPath}/assets/node_modules/bootstrap-touchspin/dist/jquery.bootstrap-touchspin.min.css" rel="stylesheet" />
     <link href="${pageContext.request.contextPath}/assets/node_modules/multiselect/css/multi-select.css" rel="stylesheet" type="text/css" />
+    
+    <!-- Data table Css -->
+    <link rel="stylesheet" type="text/css" href="${pageContext.request.contextPath}/assets/node_modules/datatables.net-bs4/css/dataTables.bootstrap4.css">
+    <link rel="stylesheet" type="text/css" href="${pageContext.request.contextPath}/assets/node_modules/datatables.net-bs4/css/responsive.dataTables.min.css">
 
     <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
     <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
@@ -909,7 +913,13 @@
     <script src="${pageContext.request.contextPath}/assets/node_modules/bootstrap-tagsinput/dist/bootstrap-tagsinput.min.js"></script>
     <script src="${pageContext.request.contextPath}/assets/node_modules/bootstrap-touchspin/dist/jquery.bootstrap-touchspin.js" type="text/javascript"></script>
     <script src="${pageContext.request.contextPath}/assets/node_modules/dff/dff.js" type="text/javascript"></script>
-    <script type="text/javascript" src="${pageContext.request.contextPath}/assets/node_modules/multiselect/js/jquery.multi-select.js"></script>
+    <script src="${pageContext.request.contextPath}/assets/node_modules/multiselect/js/jquery.multi-select.js" type="text/javascript"></script>
+    
+    
+    <!-- This is data table -->
+    <script src="${pageContext.request.contextPath}/assets/node_modules/datatables.net/js/jquery.dataTables.min.js"></script>
+    <script src="${pageContext.request.contextPath}/assets/node_modules/datatables.net-bs4/js/dataTables.responsive.min.js"></script>
+    
 	<script>
 	var treeSlave = "";
 	var menus = 0;
@@ -923,7 +933,6 @@ $(document).ready(function(){
 			    $.ajax({
 					url : "${pageContext.request.contextPath}/dashboard/data/pageCall",
 					type : 'post',
-					//dataType : 'json',
 					async : false,
 					data : {page_name : $(this).data("page_name")},
 					success : function(resp) {
