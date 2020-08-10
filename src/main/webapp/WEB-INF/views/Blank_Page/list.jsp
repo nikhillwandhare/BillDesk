@@ -18,7 +18,7 @@
             	<li class="breadcrumb-item"><a href="javascript:void(0)">Master</a></li>
                 <li class="breadcrumb-item active">GL Master</li>
             </ol>
-        	<button type="button" class="btn btn-info d-none d-lg-block m-l-15" id="addNewGL"><i class="mdi mdi-plus"></i> Add New GL</button>
+        	<button type="button" class="btn btn-info d-none d-lg-block m-l-15" id="addNewEntry"><i class="mdi mdi-plus"></i> Add New GL</button>
        	</div>
 	</div>
 </div>
@@ -72,3 +72,4 @@ $(document).ready(function(){
 </script>
 </body>
 </html>
+

@@ -9,16 +9,16 @@
 <body>
 <div class="row page-titles">
    <div class="col-md-5 align-self-center">
-   	 	<h4 class="text-themecolor">GL SubGroup</h4>
+   	 	<h4 class="text-themecolor">Transaction Entry</h4>
    </div>
    <div class="col-md-7 align-self-center text-right">
    		<div class="d-flex justify-content-end align-items-center">
             <ol class="breadcrumb">
-            	<li class="breadcrumb-item"><a href="javascript:void(0)">Administration</a></li>
-            	<li class="breadcrumb-item"><a href="javascript:void(0)">Master</a></li>
-                <li class="breadcrumb-item active">GL SubGroup</li>
+            	<li class="breadcrumb-item"><a href="javascript:void(0)">Finance</a></li>
+            	<li class="breadcrumb-item"><a href="javascript:void(0)">Transaction</a></li>
+                <li class="breadcrumb-item active">Transaction Entry</li>
             </ol>
-        	<button type="button" class="btn btn-info d-none d-lg-block m-l-15" id="addNewEntry"><i class="mdi mdi-plus"></i> Add New SubGroup</button>
+        	<button type="button" class="btn btn-info d-none d-lg-block m-l-15" id="addNewEntry"><i class="mdi mdi-plus"></i>New Transaction</button>
        	</div>
 	</div>
 </div>
@@ -26,7 +26,7 @@
 	<div class="col-lg-12">
 	    <div class="card">
                             <div class="card-body">
-                                <h4 class="card-title">SubGroup List</h4>
+                                <h4 class="card-title">Transactions List</h4>
                                 <h6 class="card-subtitle">Data table example</h6>
                                 <div class="table-responsive m-t-40">
                                     <table id="myTable" class="table table-bordered table-striped">
@@ -54,7 +54,7 @@ $(document).ready(function(){
 		$('#myTable').DataTable();
 		$("#addNewEntry").click(function(){
 		    $.ajax({
-				url : "${pageContext.request.contextPath}/finance/master/gl_subgroup/gl_subgroup_master",
+				url : "${pageContext.request.contextPath}/finance/transaction/transaction_entry/transaction_entry_form",
 				type : 'post',
 				async : false,
 				success : function(resp) {
@@ -70,21 +70,21 @@ $(document).ready(function(){
 	dataType : 'json',
 	async: false,
 	data : {
-		Id : 7,
+		Id : 6,
 		param : "Null"+"~"+"Null"
 	},
 	success : function(resp) {
-		var subgroupList = "";
+		var glList = "";
 			 $.each(resp,function(key,val){
-				 subgroupList = subgroupList + '<tr><td>'+resp[key].FASGROUP_ID+'</td>'
-				 				 +'<td>'+resp[key].FASGROUP_CODE+'</td>'
-				 				 +'<td>'+resp[key].FASGROUP_NAME+'</td>'
+				 glList = glList + '<tr><td>'+resp[key].FAGROUP_ID+'</td>'
+				 				 +'<td>'+resp[key].FAGROUP_CODE+'</td>'
+				 				 +'<td>'+resp[key].FAGROUP_NAME+'</td>'
 				 				 +'<td>'+resp[key].TYPE_NAME+'</td>'
-				 				 +'<td><i class="ti-pencil-alt" val="'+resp[key].FASGROUP_ID+'"></i></td>'
-				 				 +'<td><i class="ti-trash" val="'+resp[key].FASGROUP_ID+'"></i></td></tr>';
+				 				 +'<td><i class="ti-pencil-alt" val="'+resp[key].FAGROUP_ID+'"></i></td>'
+				 				 +'<td><i class="ti-trash" val="'+resp[key].FAGROUP_ID+'"></i></td></tr>';
 		}); 		
 			$("#myTable tbody").empty();		 
-			$("#myTable tbody").append(subgroupList);	
+			$("#myTable tbody").append(glList);	
 	}
 });
  });

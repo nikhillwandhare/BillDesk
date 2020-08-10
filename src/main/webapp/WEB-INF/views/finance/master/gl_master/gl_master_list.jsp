@@ -59,7 +59,7 @@ $(document).ready(function(){
 		
 		$("#addNewEntry").click(function(){
 				    $.ajax({
-						url : "${pageContext.request.contextPath}/finance/master/gl/glmasterform",
+						url : "${pageContext.request.contextPath}/finance/master/gl/gl_master_form",
 						type : 'post',
 						async : false,
 						success : function(resp) {

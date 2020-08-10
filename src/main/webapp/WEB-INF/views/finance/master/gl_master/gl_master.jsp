@@ -187,7 +187,7 @@ $(document).ready(function(){
 	
 	$("#backToList").click(function(){
 	    $.ajax({
-			url : "${pageContext.request.contextPath}/finance/master/glmasterlist",
+			url : "${pageContext.request.contextPath}/finance/master/gl_master_list",
 			type : 'post',
 			async : false,
 			success : function(resp) {

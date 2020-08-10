@@ -32,6 +32,9 @@
     <!-- Data table Css -->
     <link rel="stylesheet" type="text/css" href="${pageContext.request.contextPath}/assets/node_modules/datatables.net-bs4/css/dataTables.bootstrap4.css">
     <link rel="stylesheet" type="text/css" href="${pageContext.request.contextPath}/assets/node_modules/datatables.net-bs4/css/responsive.dataTables.min.css">
+    
+    <!-- Alert Dialog Css -->
+    <link href="${pageContext.request.contextPath}/assets/node_modules/sweetalert2/dist/sweetalert2.min.css" rel="stylesheet">
 
     <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
     <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
@@ -920,12 +923,13 @@
     <script src="${pageContext.request.contextPath}/assets/node_modules/datatables.net/js/jquery.dataTables.min.js"></script>
     <script src="${pageContext.request.contextPath}/assets/node_modules/datatables.net-bs4/js/dataTables.responsive.min.js"></script>
     
+    <!-- Alert Dialogue Js -->
+    <script src="${pageContext.request.contextPath}/assets/node_modules/sweetalert2/dist/sweetalert2.all.min.js"></script>
+    <script src="${pageContext.request.contextPath}/assets/node_modules/sweetalert2/sweet-alert.init.js"></script>
+    
 	<script>
 	var treeSlave = "";
-	var menus = 0;
-	var forms = 0;
-	var temp_module_id = null;
-	var temp_menu_id = null;
+
 $(document).ready(function(){
 	$(".page").click(function()
 			{
