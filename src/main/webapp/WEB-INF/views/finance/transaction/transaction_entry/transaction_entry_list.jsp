@@ -40,7 +40,7 @@
                                                 <th>Salary</th>
                                             </tr>
                                         </thead>
-                                        <tbody>>
+                                        <tbody>
                                         </tbody>
                                     </table>
                                 </div>

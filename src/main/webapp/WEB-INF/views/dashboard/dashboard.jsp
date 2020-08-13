@@ -35,6 +35,9 @@
     
     <!-- Alert Dialog Css -->
     <link href="${pageContext.request.contextPath}/assets/node_modules/sweetalert2/dist/sweetalert2.min.css" rel="stylesheet">
+    
+    <!-- Simple table css -->
+    <link href="${pageContext.request.contextPath}/assets/node_modules/bootstrap-table/dist/bootstrap-table.min.css" rel="stylesheet" type="text/css" />
 
     <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
     <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
@@ -927,6 +930,9 @@
     <script src="${pageContext.request.contextPath}/assets/node_modules/sweetalert2/dist/sweetalert2.all.min.js"></script>
     <script src="${pageContext.request.contextPath}/assets/node_modules/sweetalert2/sweet-alert.init.js"></script>
     
+    
+    <script src="${pageContext.request.contextPath}/assets/node_modules/bootstrap-table/dist/bootstrap-table.min.js"></script>
+    <script src="${pageContext.request.contextPath}/assets/dist/js/pages/bootstrap-table.init.js"></script>
 	<script>
 	var treeSlave = "";
 

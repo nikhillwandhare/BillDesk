@@ -18,7 +18,7 @@
             	<li class="breadcrumb-item"><a href="javascript:void(0)">Master</a></li>
                 <li class="breadcrumb-item active">GL Master</li>
             </ol>
-        	<button type="button" class="btn btn-info d-none d-lg-block m-l-15"><i class="mdi mdi-plus"></i> Create New</button>
+        	<button type="button" class="btn btn-info d-none d-lg-block m-l-15" id="backToList"><i class="mdi mdi-chevron-double-left"></i> Back To List</button>
        	</div>
 	</div>
 </div>

@@ -18,7 +18,7 @@
             	<li class="breadcrumb-item"><a href="javascript:void(0)">Transaction</a></li>
                 <li class="breadcrumb-item active">Transaction Entry</li>
             </ol>
-        	<button type="button" class="btn btn-info d-none d-lg-block m-l-15" id="backToList"><i class="mdi mdi-plus"></i> Create New</button>
+        	<button type="button" class="btn btn-info d-none d-lg-block m-l-15" id="backToList"><i class="mdi mdi-chevron-double-left"></i> Back To List</button>
        	</div>
 	</div>
 </div>
@@ -101,6 +101,43 @@
                             <!--/span-->
                         </div>
 
+						<div class="row">
+                            <div class="col-md-12">
+                            	<div class="form-group">
+	                                <h4 class="card-title">Bootstrap Simple Table</h4>
+	                                <h6 class="card-subtitle">Simple table example</h6>
+	                                <table data-toggle="table" data-height="250" data-mobile-responsive="true" class="table-striped" id="tableDetails">
+	                                    <thead>
+	                                        <tr>
+	                                            <th>DEL</th>
+	                                            <th>Sr.No.</th>
+	                                            <th>GL Name</th>
+	                                            <th>Account Name</th>
+	                                            <th>Cheq/DD</th>
+	                                            <th>Cheque No</th>
+	                                            <th>Cheque Date</th>
+	                                            <th>Credit Amt</th>
+	                                            <th>Debit Amt</th>
+	                                        </tr>
+	                                    </thead>
+	                                    <tbody>
+	                                        <tr id="tr-id-1" class="tr-class-1">
+	                                        	<td><input type="button" value="X" class="form-control"></td>
+	                                        	<td>1</td>
+	                                            <td id="td-id-1" class="td-class-1"> GL </td>
+	                                            <td>Acc</td>
+	                                            <td>Type</td>
+	                                            <td>Chequ no</td>
+	                                            <td>date</td>
+	                                            <td>100.00</td>
+	                                            <td>00</td>
+	                                        </tr>
+	                                    </tbody>
+	                                </table>
+                                </div>
+                            </div>
+                        </div>
+
                     </div>
                     <div class="form-actions" style="text-align:right;">
                         <button type="submit" class="btn btn-success"> <i class="mdi mdi-check"></i> Save</button>
@@ -113,6 +150,17 @@
 </div>
 <script>
 $(document).ready(function(){
+	$("#backToList").click(function(){
+		$.ajax({
+			url : "${pageContext.request.contextPath}/finance/transaction/transaction_entry/transaction_entry_list",
+			type : 'post',
+			async : false,
+			success : function(resp) {
+				$(".container-fluid").empty();
+				$(".container-fluid").html(resp);
+				}
+	    	});
+		});
 	
 	
     $.ajax({
