@@ -101,4 +101,10 @@ public class loginController {
 			
 			return session;
 	}
+	
+	@RequestMapping("/logout")
+	public String logOut()
+	{
+		return "login/login";
+	}
 }

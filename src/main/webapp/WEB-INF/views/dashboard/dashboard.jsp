@@ -335,7 +335,7 @@
                                 <!-- text-->
                                 <div class="dropdown-divider"></div>
                                 <!-- text-->
-                                <a href="pages-login.html" class="dropdown-item"><i class="fa fa-power-off"></i> Logout</a>
+                                <a href="#" class="dropdown-item logout"><i class="mdi mdi-logout"></i> Logout</a>
                                 <!-- text-->
                             </div>
                         </li>
@@ -937,6 +937,7 @@
 	var treeSlave = "";
 
 $(document).ready(function(){
+	
 	$(".page").click(function()
 			{
 		
@@ -1060,6 +1061,9 @@ $(".dashboardCall").click(function(){
 	window.location.replace("${pageContext.request.contextPath}/dashboard");
 });
 	
+$(".logout").click(function(){
+	window.location.replace("${pageContext.request.contextPath}/logout");
+});
 	</script>
 	
 </body>

@@ -31,109 +31,109 @@
                         <h3 class="card-title">Transaction Entry</h3>
                         <hr>
                          <div class="row">
-                            <div class="col-md-6">
+                            <div class="col-md-3">
                                 <div class="form-group">
-                                    <label class="control-label">Sub-Group</label>
-                                    <select class="form-control custom-select" id="subgroup">
+                                    <label class="control-label">Pay Mode</label>
+                                    <select class="form-control custom-select" id="payMode">
+                                    	<option value="CP">Cash Payment</option>
+                                    	<option value="BP">Bank Payment</option>
+                                    	<option value="CR">Cash Receipt</option>
+                                    	<option value="BR">Bank Receipt</option>
+                                    	<option value="JV">Journal Voucher</option>
+                                    	<option value="CT">Contra Voucher</option>
                                     </select>
                                 </div>
                             </div>
+                            <div class="col-md-3"></div>
                             <div class="col-md-3">
                                 <div class="form-group">
-                                    <label class="control-label">Prefix</label>
-                                    <input type="text" id="prefix" class="form-control form-control-danger" placeholder="Prefix">
+                                    <label class="control-label">Voucher Date</label>
+                                    <input type="date" id="voucherDate" class="form-control" placeholder="Voucher Date">
                                 </div>
                             </div>
                             <div class="col-md-3">
                                 <div class="form-group">
-                                    <label class="control-label">Default</label>
-                                    <input type="text" id="prefix2" class="form-control form-control-danger" placeholder="Default">
+                                    <label class="control-label">Voucher Number</label>
+                                    <input type="text" id="voucherNumber" class="form-control" placeholder="Voucher Number">
+                                </div>
+                            </div>
+                         </div>
+                         <div class="row">
+                          <div class="col-md-6"></div>
+                            <div class="col-md-3">
+                                <div class="form-group">
+                                    <label class="control-label">Token Date</label>
+                                    <input type="text" id="tokenDate" class="form-control" placeholder="Token Date">
+                                </div>
+                            </div>
+                            <div class="col-md-3">
+                                <div class="form-group">
+                                    <label class="control-label">Token Number</label>
+                                    <input type="text" id="tokenNumber" class="form-control" placeholder="Token Number">
                                 </div>
                             </div>
                          </div>
                          <div class="row">
                             <!--/span-->
-                            <div class="col-md-6">
-                                <div class="form-group has-danger">
-                                    <label class="control-label">GL Name</label>
-                                    <input type="text" class="form-control form-control-danger" placeholder="GL Name" id="glname">
-                                </div>
-                            </div>
-                            <!--/span-->
-                            <div class="col-md-6">
+                            <div class="col-md-12">
                                 <div class="form-group">
-                                    <label class="control-label">GL Type</label>
-                                    <select class="form-control custom-select" id="gltype">
-                                    </select>
+                                    <label class="control-label">Narration</label>
+                                    <input type="text" class="form-control" placeholder="Narration" id="narration">
                                 </div>
                             </div>
                         </div>
-                        
                         <div class="row">
-                            <div class="col-md-6">
-                                <div class="form-group has-success">
-                                    <label class="control-label">Status</label>
-                                    <select class="form-control custom-select">
-                                        <option value="E">Enable</option>
-                                        <option value="D">Disable</option>
-                                    </select>
-                                </div>
-                            </div>
-                            <!--/span-->
-                            <div class="col-md-6">
-                                <div class="form-group">
-                                    <label class="control-label">Opening Date</label>
-                                    <input type="date" class="form-control" placeholder="dd/mm/yyyy">
-                                </div>
-                            </div>
-                            <!--/span-->
-                        </div>
-                        <!--/row-->
-                        <div class="row">
-                            <div class="col-md-4">
-                                <div class="form-group">
-                                    <label class="custom-control custom-checkbox m-b-0" id="accountFlagDiv">
-                                            <input type="checkbox" class="custom-control-input" id="accountFlag">
-                                            <span class="custom-control-label">Account Flag</span>
-                                    </label>
-                                </div>
-                            </div>
-                            <!--/span-->
-                        </div>
-
+                        	<div class="col-md-10"></div>
+                        	<div class="col-md-2">
+                        		<div class="form-group">
+									<div style="text-align:right">
+										<button type="button" class="btn waves-effect waves-light btn-block btn-success" id="addRow">Add Row</button>
+									</div>
+								</div>
+							</div>
+						</div>
+						
 						<div class="row">
                             <div class="col-md-12">
                             	<div class="form-group">
-	                                <h4 class="card-title">Bootstrap Simple Table</h4>
-	                                <h6 class="card-subtitle">Simple table example</h6>
-	                                <table data-toggle="table" data-height="250" data-mobile-responsive="true" class="table-striped" id="tableDetails">
-	                                    <thead>
-	                                        <tr>
-	                                            <th>DEL</th>
-	                                            <th>Sr.No.</th>
+	                                <!-- <h4 class="card-title">Bootstrap Simple Table</h4>
+	                                <h6 class="card-subtitle">Simple table example</h6> -->
+                                    <table id="lineTable">
+                                        <thead>
+                                            <tr>
+                                                <th style="text-align:center;">DEL</th>
+	                                            <th style="text-align:center;">Sr.No.</th>
 	                                            <th>GL Name</th>
 	                                            <th>Account Name</th>
-	                                            <th>Cheq/DD</th>
-	                                            <th>Cheque No</th>
-	                                            <th>Cheque Date</th>
-	                                            <th>Credit Amt</th>
-	                                            <th>Debit Amt</th>
-	                                        </tr>
-	                                    </thead>
-	                                    <tbody>
-	                                        <tr id="tr-id-1" class="tr-class-1">
-	                                        	<td><input type="button" value="X" class="form-control"></td>
-	                                        	<td>1</td>
-	                                            <td id="td-id-1" class="td-class-1"> GL </td>
-	                                            <td>Acc</td>
-	                                            <td>Type</td>
-	                                            <td>Chequ no</td>
-	                                            <td>date</td>
-	                                            <td>100.00</td>
-	                                            <td>00</td>
-	                                        </tr>
-	                                    </tbody>
-	                                </table>
+	                                            <th style="text-align:center;">Cheq/DD</th>
+	                                            <th style="text-align:center;">Cheque No</th>
+	                                            <th style="text-align:center;">Cheque Date</th>
+	                                            <th style="text-align:right;">Credit Amt</th>
+	                                            <th style="text-align:right;">Debit Amt</th>
+                                            </tr>
+                                        </thead>
+                                        <tbody>
+                                            <tr>
+                                                <td style="width:1%"><button type="button" class="btn waves-effect waves-light btn-block btn-danger">X</button></td>
+                                                <td style="width:1%"><input type="text" id="srno" class="form-control" value="1"/></td>
+                                                <td style="width:13%"><select id="gl_id" class="form-control"><option>GL Name</option></select></td>
+                                                <td style="width:13%"><select id="acc_id" class="form-control"><option>Account Name</option></select></td>
+                                                <td>
+                                                    <select id="type" class="form-control">
+                                                    	<option>Cheque</option>
+                                                    	<option>DD</option>
+                                                    	<option>Transfer</option>
+                                                    	<option>RTGS</option>
+                                                    </select>
+                                                </td>
+                                                <td><input type="text" id="chequeNo" class="form-control"/></td>
+                                                <td><input type="date" id="chequeDate" class="form-control"/></td>
+	                                            <td style="width:13%"><input type="text" id="cramt" class="form-control"/></td>
+	                                            <td style="width:13%"><input type="text" id="dramt" class="form-control"/></td>
+                                            </tr>
+                                        </tbody>
+                                    </table>
+                                
                                 </div>
                             </div>
                         </div>
@@ -150,6 +150,26 @@
 </div>
 <script>
 $(document).ready(function(){
+	$("#addRow").click(function(){
+		var ln = $("#lineTable tr").length;
+		ln = ln + 1;
+		var row =   '<tr>'
+		          + '<td style="width:1%"><button type="button" class="btn waves-effect waves-light btn-block btn-danger" id="del'+ln+'">X</button></td>'
+		          + '<td style="width:1%"><input type="text" id="srno" class="form-control" value="'+ln+'"/></td>'
+		          + '<td style="width:13%"><select id="gl_id'+ln+'" class="form-control"><option>GL Name</option></select></td>'
+		          + '<td style="width:13%"><select id="acc_id'+ln+'" class="form-control"><option>Account Name</option></select></td>'
+		          + '<td> <select id="type'+ln+'" class="form-control"> <option>Cheque</option><option>DD</option><option>Transfer</option><option>RTGS</option></select></td>'
+		          + '<td><input type="text" id="chequeNo'+ln+'" class="form-control"/></td>'
+		          + '<td><input type="date" id="chequeDate'+ln+'" class="form-control"/></td>'
+		          + '<td style="width:13%"><input type="text" id="cramt'+ln+'" class="form-control"/></td>'
+		          + '<td style="width:13%"><input type="text" id="dramt'+ln+'" class="form-control"/></td>'
+		          + '</tr>';
+		$("#lineTable").append(row);	
+	});
+	
+	$("#del").click(function(){
+		
+	});
 	$("#backToList").click(function(){
 		$.ajax({
 			url : "${pageContext.request.contextPath}/finance/transaction/transaction_entry/transaction_entry_list",
@@ -162,7 +182,7 @@ $(document).ready(function(){
 	    	});
 		});
 	
-	
+	/*
     $.ajax({
 		url : "${pageContext.request.contextPath}/getList",
 		type : 'post',
@@ -180,7 +200,7 @@ $(document).ready(function(){
 				$("#branchStr").empty();		 
 				$("#branchStr").append(branchList);	
 		}
-	});
+	});*/
     
 
 	
