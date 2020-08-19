@@ -904,6 +904,7 @@
     <!--morris JavaScript -->
     <script src="${pageContext.request.contextPath}/assets/node_modules/raphael/raphael-min.js"></script>
     <script src="${pageContext.request.contextPath}/assets/node_modules/morrisjs/morris.min.js"></script>
+    <script src="${pageContext.request.contextPath}/assets/node_modules/sticky-kit-master/dist/sticky-kit.min.js"></script>
     <script src="${pageContext.request.contextPath}/assets/node_modules/jquery-sparkline/jquery.sparkline.min.js"></script>
     <!-- Chart JS -->
     <script src="${pageContext.request.contextPath}/assets/dist/js/dashboard4.js"></script>
@@ -932,6 +933,8 @@
     
     
     <script src="${pageContext.request.contextPath}/assets/node_modules/bootstrap-table/dist/bootstrap-table.min.js"></script>
+    <script src="${pageContext.request.contextPath}/assets/dist/js/pages/bootstrap-table.init.js"></script>
+    
     <script src="${pageContext.request.contextPath}/assets/dist/js/pages/bootstrap-table.init.js"></script>
 	<script>
 	var treeSlave = "";
@@ -1064,6 +1067,8 @@ $(".dashboardCall").click(function(){
 $(".logout").click(function(){
 	window.location.replace("${pageContext.request.contextPath}/logout");
 });
+
+
 	</script>
 	
 </body>
